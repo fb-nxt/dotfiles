@@ -6,7 +6,7 @@
 */
 * {
     border: none;
-    border-radius: 0.28em;
+    border-radius: 0.3em;
     font-family: "JetBrainsMono Nerd Font Propo","LXGW WenKai Screen","JetBrains Maple Mono";
     /* font-family:"0xProto Nerd Font Propo"; */
     font-size: 16.6px; /* 基准大小 */
@@ -33,7 +33,7 @@ tooltip label {
 /* 工作区 */
 #workspaces {
     background: @surface;
-    border-radius: 0.28em;
+    border-radius: 0.3em;
     padding: 0;
     margin: 0;
 }
@@ -60,7 +60,7 @@ tooltip label {
 /* waybar niri taskbar */
 .niri-taskbar {
     background: @surface_container_high;
-    padding: 0 0 0 0.28em; /* 5px */
+    padding: 0 0 0 0.3em; /* 5px */
 }
 
 .niri-taskbar button:hover {
@@ -111,7 +111,7 @@ window#waybar.empty #window {
  #custom-screenshot {
     padding: 0px 0.35em; /* 7px */
     font-size: 1.15em; /* 22px */
-    border-radius: 0.28em 0 0 0.28em;
+    border-radius: 0.3em 0 0 0.3em;
 }
 
 /* wf-recoder脚本 */
@@ -159,7 +159,7 @@ window#waybar.empty #window {
 #power-profiles-daemon{
     padding: 0 0.5em 0 0.3em;
     font-size: 1.15em;
-    border-radius: 0em 0.28em 0.28em 0em;
+    border-radius: 0em 0em 0em 0em;
 }
 
 #power-profiles-daemon,
@@ -195,6 +195,7 @@ window#waybar.empty #window {
     font-size: 1.39em; /* 25px */
     padding: 0px 0.39em; /* 7px */
     margin: 0px;
+    border-radius: 0em;
     background-color: @primary;
     color: @on_primary;
 
@@ -204,6 +205,7 @@ window#waybar.empty #window {
 
 #clock {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
+    border-radius: 0em;
 }
 
 #clock {
@@ -214,6 +216,7 @@ window#waybar.empty #window {
 #custom-cava {
     background-color: @surface_container_high;
     color: @primary;
+    border-radius: 0em 0.3em 0.3em 0em;
     padding: 0px 0.35em; /* 7px */
 }
 
@@ -226,7 +229,7 @@ window#waybar.empty #window {
 /* 右侧 */
 
 #custom-updates {
-    border-radius: 0.28em;
+    border-radius: 0.3em;
     padding: 0px 0.17em 0px 0.39em; /* 3px 7px */
     background-color: @surface_bright;
     color: @error;
@@ -236,7 +239,7 @@ window#waybar.empty #window {
 #tray {
     padding: 0px 0.39em 0px 0.39em; /* 7px */
     font-size: 1.11em; /* 20px */
-    border-radius: 0.28em 0.28em 0.28em 0.28em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
     background-color: @surface_bright;
 }
 
@@ -266,13 +269,13 @@ window#waybar.empty #window {
 #backlight {
     background-color: @surface_container_high;
     color: @tertiary;
-    padding: 0px 0.28em 0px 0px; /* 5px */
+    padding: 0px 0.3em 0px 0px; /* 5px */
     border-radius: 0em;
 }
 
 #backlight-slider {
     background-color: @surface_container_high;
-    padding: 0px 0.28em 0px 0px; /* 5px */
+    padding: 0px 0.3em 0px 0px; /* 5px */
     border-radius: 0em;
 }
 
@@ -282,7 +285,7 @@ window#waybar.empty #window {
     opacity: 0;
     background-image: none;
     border: none;
-    border-radius: 0.28em 0em 0em 0.28em;
+    border-radius: 0.3em 0em 0em 0.3em;
     box-shadow: none;
     background: none;
 }
@@ -290,7 +293,7 @@ window#waybar.empty #window {
 #backlight-slider trough {
     min-height: 0.56em; /* 10px */
     min-width: 4.44em;  /* 80px */
-    border-radius: 0.28em 0em 0em 0.28em; /* 5px */
+    border-radius: 0.3em 0em 0em 0.3em; /* 5px */
     opacity: 0;
     border-radius: 0em;
     background-color: @background;
@@ -313,8 +316,8 @@ window#waybar.empty #window {
 }
 
 #pulseaudio {
-    padding: 0px 0px 0px 0.28em; /* 5px */
-    border-radius: 0em 0.28em 0.28em 0em;
+    padding: 0px 0px 0px 0.3em; /* 5px */
+    border-radius: 0em 0.3em 0.3em 0em;
 }
 
 #pulseaudio-slider {
@@ -356,10 +359,11 @@ window#waybar.empty #window {
 #bluetooth.disabled,
 #network,
 #battery {
+    margin-left: 0.2em;
     background-color: @surface_container;
     color: @secondary;
     padding: 0px 0.39em; /* 7px */
-    border-radius: 0.28em 0em 0em 0.28em;  
+    border-radius: 0.3em 0em 0em 0.3em;  
 }
 
 #battery.critical:not(.charging) {
@@ -382,9 +386,10 @@ window#waybar.empty #window {
 }
 
 #network {
+    margin-left: 0.2em;
     padding: 0px 0.35em 0 0.3em; /* 7px */
     font-size: 1.1em; /* 22px */
-    border-radius: 0.28em 0em 0em 0.28em;
+    border-radius: 0.3em 0em 0em 0.3em;
 }
 
 
@@ -392,7 +397,22 @@ window#waybar.empty #window {
 #custom-wlogout {
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
     font-size: 1.39em; /* 25px */
-    border-radius: 0em 0.28em 0.28em 0em;
+    border-radius: 0em 0em 0em 0em;
+}
+#custom-reboot {
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.39em; /* 25px */
+    border-radius: 0em 0em 0em 0em;
+}
+#custom-logout{
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.39em; /* 25px */
+    border-radius: 0em 0em 0em 0em;
+}
+#custom-lockscreen{
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.39em; /* 25px */
+    border-radius: 0em 0em 0em 0em;
 }
 
 #custom-wlogout,

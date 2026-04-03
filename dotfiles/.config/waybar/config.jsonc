@@ -2,7 +2,7 @@
     "include": [
         "modules.jsonc"
     ],
-    "height": 10,
+    "height": 5,
     "layer": "top",
     "position": "top",
     "fixed-center": true,
@@ -17,6 +17,7 @@
 	    "custom/clipboard",
         "custom/colorpicker",
         "power-profiles-daemon",
+        "custom/applauncher",
         "clock",
         "custom/cava"
     ],
