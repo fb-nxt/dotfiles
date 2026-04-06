@@ -1,13 +1,13 @@
 __build_info:
   rime_version: 1.16.1
   timestamps:
-    default: 1758176996
+    default: 1774018450
     default.custom: 1772704443
-    key_bindings: 1758176996
+    key_bindings: 1774018450
     key_bindings.custom: 0
     melt_eng.custom: 0
-    melt_eng.schema: 1773260641
-    punctuation: 1758176996
+    melt_eng.schema: 1775161706
+    punctuation: 1774018450
     punctuation.custom: 0
 algebra_abc:
   __append:
@@ -286,9 +286,6 @@ key_binder:
     - {accept: "Control+y", send: Page_Up, when: composing}
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
-    - {accept: ISO_Left_Tab, send: "Shift+Left", when: composing}
-    - {accept: "Shift+Tab", send: "Shift+Left", when: composing}
-    - {accept: Tab, send: "Shift+Right", when: composing}
     - {accept: minus, send: Page_Up, when: has_menu}
     - {accept: equal, send: Page_Down, when: has_menu}
     - {accept: comma, send: Page_Up, when: paging}
@@ -389,6 +386,11 @@ schema:
   name: "Easy English Nano"
   schema_id: melt_eng
   version: "2026-01-30"
+selector:
+  bindings:
+    ISO_Left_Tab: previous_candidate
+    "Shift+Tab": previous_candidate
+    Tab: next_candidate
 speller:
   algebra:
     __append: ["derive/(?<!\\d)1([1-9])(?!\\d)/ii$1/", "derive/([1-9])0000(?!0)/$1wf/", "derive/([1-9])000(?!0)/$1qj/", "derive/([1-9])00(?!0)/$1bs/", "derive/([2-9])0(?!0)/$1ii/", "derive/(?<!\\d)([2-9])([1-9])(?!\\d)/$1ii$2/", "derive/\\./dj/", "derive/10/ii/", "derive/0/lq/", "derive/1/yi/", "derive/2/eq/", "derive/2/lh/", "derive/3/sf/", "derive/4/si/", "derive/5/wu/", "derive/6/ln/", "derive/7/qi/", "derive/8/ba/", "derive/9/jn/", "derive/\\+/jb/", "derive/#/jq/"]

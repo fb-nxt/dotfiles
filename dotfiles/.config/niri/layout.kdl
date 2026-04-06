@@ -153,9 +153,9 @@ layout {
     
     //窗口距离屏幕边缘的距离
     struts {
-        left -3
-        right -3
-        top -5
-        bottom -5
+        left -2
+        right -2
+        top -7
+        bottom -7
     }
 }

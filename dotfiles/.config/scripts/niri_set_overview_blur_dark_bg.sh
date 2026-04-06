@@ -6,7 +6,7 @@
 
 # --- 核心设置 ---
 # 可选: "swww" 或 "swaybg"
-WALLPAPER_BACKEND="swww" 
+WALLPAPER_BACKEND="awww" 
 
 # [SWWW 专用] 参数
 SWWW_ARGS="-n overview --transition-type fade --transition-duration 0.5"
@@ -191,25 +191,29 @@ apply_wallpaper() {
     
     touch -a "$img_path"
 
-    if [ "$WALLPAPER_BACKEND" == "swww" ]; then
+    if [ "$WALLPAPER_BACKEND" == "swww" ] || [ "$WALLPAPER_BACKEND" == "awww" ]; then
         # === [新增] 检测 daemon overview layer 是否存在 ===
         # 使用 grep -qE 同时匹配 swww-daemonoverview 或 awww-daemonoverview
         if ! niri msg layers | grep -qE "(swww-daemonoverview|awww-daemonoverview)"; then
             # 如果 layer 不存在，启动 daemon
             # 优先检查 swww-daemon，如果不存在则检查 awww-daemon
-            if command -v swww-daemon &> /dev/null; then
+            if [ "$WALLPAPER_BACKEND" == "swww" ] && command -v swww-daemon &> /dev/null; then
                 swww-daemon -n overview &
-            elif command -v awww-daemon &> /dev/null; then
+            elif [ "$WALLPAPER_BACKEND" == "awww" ] && command -v awww-daemon &> /dev/null; then
                 awww-daemon -n overview &
             fi
-            
+
             # 等待一小会儿确保 socket 就绪
             sleep 0.5
         fi
-        
-        # SWWW 逻辑
-        swww img $SWWW_ARGS "$img_path" &
-        
+
+        # SWWW/AWWW 逻辑
+        if [ "$WALLPAPER_BACKEND" == "swww" ]; then
+            swww img $SWWW_ARGS "$img_path" &
+        elif [ "$WALLPAPER_BACKEND" == "awww" ]; then
+            awww img -n overview --transition-type fade --transition-duration 0.5 "$img_path" &
+        fi
+
     elif [ "$WALLPAPER_BACKEND" == "swaybg" ]; then
         # Swaybg 逻辑
         # 1. 检查 niri 的图层状态，如果发现 overview 正在运行
