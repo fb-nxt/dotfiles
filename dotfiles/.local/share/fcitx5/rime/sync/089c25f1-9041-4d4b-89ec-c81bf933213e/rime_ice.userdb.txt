@@ -19,7 +19,7 @@ ai ni 	爱你	c=0 d=0.0496585 t=10363
 an 	按	c=3 d=1.88586 t=10363
 an jian 	按键	c=3 d=2.0851 t=10363
 an li 	案例	c=1 d=0.932394 t=10363
-an xia 	按下	c=1 d=1 t=10345
+an xia 	按下	c=1 d=0.913931 t=10363
 an yi xia 	按一下	c=1 d=0.995012 t=10363
 an zhao 	按照	c=12 d=3.11055 t=10363
 an zhuang 	安装	c=44 d=15.8029 t=10363
@@ -33,7 +33,7 @@ ba bu zhou 	把步骤	c=1 d=0.882497 t=10363
 ba gu 	八股	c=6 d=4.92391 t=10363
 ba le 	罢了	c=1 d=0.937067 t=10363
 ba wo 	把我	c=1 d=0.481909 t=10363
-bai du 	百度	c=1 d=1 t=10360
+bai du 	百度	c=1 d=0.985112 t=10363
 bai ping 	白屏	c=4 d=1.79554 t=10363
 ban 	办	c=4 d=2.46893 t=10363
 ban 	板	c=1 d=0.763379 t=10363
@@ -80,7 +80,7 @@ bi ye 	毕业	c=1 d=0.70822 t=10363
 bi zhi 	壁纸	c=28 d=12.6899 t=10363
 bian 	变	c=2 d=1.79606 t=10363
 bian cheng 	变成	c=2 d=1.7492 t=10363
-bian huan 	变换	c=1 d=1 t=10350
+bian huan 	变换	c=1 d=0.937067 t=10363
 bian ji 	编辑	c=5 d=3.16622 t=10363
 bian liang 	变量	c=9 d=5.09357 t=10363
 bian xie 	编写	c=3 d=1.7066 t=10363
@@ -377,7 +377,7 @@ dou bu neng 	都不能	c=1 d=0.856415 t=10363
 dou bu yong 	都不用	c=1 d=0.831104 t=10363
 dou fu 	豆腐	c=2 d=1.99501 t=10363
 dou gen 	都跟	c=1 d=0.913931 t=10363
-dou hui 	都会	c=1 d=1 t=10349
+dou hui 	都会	c=1 d=0.932394 t=10363
 dou ke yi 	都可以	c=1 d=0.537944 t=10363
 dou mei 	都没	c=0 d=0.0782705 t=10363
 dou mei you 	都没有	c=2 d=1.72615 t=10363
@@ -613,7 +613,7 @@ hai wei 	还未	c=1 d=0.524663 t=10363
 hai xu yao 	还需要	c=1 d=0.839457 t=10363
 hai yao 	还要	c=4 d=1.69189 t=10363
 hai you 	还有	c=13 d=3.19852 t=10363
-hai zhi shi 	还只是	c=1 d=1 t=10356
+hai zhi shi 	还只是	c=1 d=0.965605 t=10363
 han shu 	函数	c=23 d=4.60456 t=10363
 han you 	含有	c=1 d=0.970446 t=10363
 hang 	行	c=12 d=6.08236 t=10363
@@ -886,7 +886,7 @@ kong zhe 	空着	c=1 d=0.484325 t=10363
 ku 	库	c=18 d=6.60142 t=10363
 ku xuan 	酷炫	c=1 d=0.70822 t=10363
 kuai jie jian 	快捷键	c=1 d=0.628135 t=10363
-kuai shou 	快手	c=1 d=1 t=10362
+kuai shou 	快手	c=1 d=0.995012 t=10363
 kuai su 	快速	c=1 d=0.980199 t=10363
 kuang 	旷	c=1 d=1 t=10363
 kuang jia 	框架	c=3 d=2.28734 t=10363

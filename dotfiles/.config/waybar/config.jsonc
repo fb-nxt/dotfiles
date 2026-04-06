@@ -10,7 +10,6 @@
     "modules-left": [
         "niri/workspaces",
         "cffi/niri-taskbar"
-        //"niri/window"
     ],
     "modules-center": [
         "custom/screenshot",

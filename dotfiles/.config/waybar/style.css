@@ -59,8 +59,8 @@ tooltip label {
 
 /* waybar niri taskbar */
 .niri-taskbar {
-    background: @surface_container_high;
-    padding: 0 0 0 0.3em; /* 5px */
+/*    background: @surface_container_high; */
+    padding: 0 0 0 0em; /* 5px */
 }
 
 .niri-taskbar button:hover {
