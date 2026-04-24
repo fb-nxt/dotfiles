@@ -19,3 +19,6 @@ export DB_PORT="3306"
 export DB_USER="root"
 export DB_PASSWORD="asdasd"
 # consider using a dedicated script or direnv instead.
+
+# OpenHarness
+export PATH="/home/shorin/.openharness-venv/bin:$PATH"

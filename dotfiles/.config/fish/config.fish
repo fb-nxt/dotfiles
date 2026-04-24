@@ -51,3 +51,8 @@ set -gx PATH $PATH /home/shorin/.lmstudio/bin
 # Miniconda3
 set -p PATH /opt/miniconda3/bin
 
+
+# OpenHarness
+if not contains -- "/home/shorin/.openharness-venv/bin" $PATH
+    set -gx PATH "/home/shorin/.openharness-venv/bin" $PATH
+end
