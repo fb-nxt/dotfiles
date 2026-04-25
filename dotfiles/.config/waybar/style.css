@@ -6,7 +6,7 @@
 */
 * {
     border: none;
-    border-radius: 0.3em;
+    border-radius: 0em;
     font-family: "JetBrainsMono Nerd Font Propo","LXGW WenKai Screen","JetBrains Maple Mono";
     /* font-family:"0xProto Nerd Font Propo"; */
     font-size: 16.6px; /* 基准大小 */
@@ -14,7 +14,7 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: @surface_container_high;
     color: @on_surface;
 }
 
@@ -43,7 +43,7 @@ tooltip label {
     background: transparent;
     color: @tertiary_container;
     border-radius: 0;
-    margin: 0;
+    margin: -2px;
     border: none;
     box-shadow: none;
     outline: none;
@@ -110,10 +110,9 @@ window#waybar.empty #window {
 }
 
  #custom-screenshot {
-    padding: 0px 0.35em; /* 7px */
+    padding: 0px 0.5em 0em 0.3em; /* 7px */
     font-size: 1.15em; /* 22px */
     border-radius: 0.3em 0 0 0.3em;
-
 }
 
 /* wf-recoder脚本 */
@@ -146,7 +145,7 @@ window#waybar.empty #window {
 #custom-clipboard,
 #custom-settings,
 #custom-screenshot {
-    background-color: @surface_container_high;
+    background-color: @surface;
     color: @secondary;
 }
 /* 录制中 */
@@ -162,14 +161,14 @@ window#waybar.empty #window {
     padding: 0 0.5em 0 0.3em;
     font-size: 1.15em;
     border-radius: 0em 0.3em 0.3em 0em;
-    margin-right: 0.5em;
+    margin-right: 5em;
 }
 
 #power-profiles-daemon,
 #custom-colorpicker,
 #idle_inhibitor {
-    background-color: @tertiary;
-    color: @on_tertiary;
+    background-color: @surface;
+    color: @secondary;
     padding: 0px 0.36em; /* 6px */
 }
 #idle_inhibitor.activated{
@@ -179,13 +178,13 @@ window#waybar.empty #window {
     padding: 0px 0.4em 0em 0.36em;
 }
 #power-profiles-daemon.performance {
-    color: @on_error;
+    color: @secondary;
     font-size: 1.28em; /* 23px */
     padding: 0px 0.32em 0px 0.45em; /* 9px 8px */
 }
 
 #power-profiles-daemon.balanced {
-    color: @on_tertiary;
+    color: @secondary;
 }
 
 #power-profiles-daemon.power-saver {
@@ -195,32 +194,32 @@ window#waybar.empty #window {
 
 /* 菜单 */
 #custom-applauncher {
-    font-size: 1.39em; /* 25px */
+    font-size: 1.2em; /* 25px */
     padding: 0px 0.39em; /* 7px */
     margin: 0px;
-    border-radius: 0.3em;
-    background-color: @primary;
-    color: @on_primary;
-
+    border-radius: 0.3em 0em 0em 0.3em;
+    background-color: @surface;
+    color: @secondary;
 }
 
 /*中间右边第二级*/
 
 #clock {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
-    border-radius: 0.3em 0em 0em 0.3em;
-    margin-left: 0.5em;
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    background-color: @surface;
+    font-size: 1.1em;
 }
 
 #clock {
-    background-color: @secondary;
-    color: @on_secondary;
+    color: @secondary;
 }
 
 #custom-cava {
-    background-color: @surface_container_high;
+    background-color: @surface;
     color: @primary;
-    border-radius: 0em 0.3em 0.3em 0em;
+    margin-left: 5em;
+    border-radius: 0.3em;
     padding: 0px 0.35em; /* 7px */
 }
 
@@ -363,7 +362,7 @@ window#waybar.empty #window {
 #bluetooth.disabled,
 #network,
 #battery {
-    margin-left: 0.5em;
+    margin-left: 0em;
     background-color: @surface_container;
     color: @secondary;
     padding: 0px 0.39em; /* 7px */
@@ -401,21 +400,21 @@ window#waybar.empty #window {
 #custom-wlogout {
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
     font-size: 1.39em; /* 25px */
-    border-radius: 0em 0em 0em 0em;
+    border-radius: 0em 0.3em 0.3em 0em;
 }
 #custom-reboot {
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
-    font-size: 1.39em; /* 25px */
-    border-radius: 0em 0em 0em 0em;
+    font-size: 1.1em; /* 25px */
+    border-radius: 0.3em 0em 0em 0.3em;
 }
 #custom-logout{
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
-    font-size: 1.39em; /* 25px */
+    font-size: 1.1em; /* 25px */
     border-radius: 0em 0em 0em 0em;
 }
 #custom-lockscreen{
     padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
-    font-size: 1.39em; /* 25px */
+    font-size: 1.1em; /* 25px */
     border-radius: 0em 0em 0em 0em;
 }
 
