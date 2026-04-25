@@ -10,32 +10,25 @@
     "reload_style_on_change": true,
     "modules-left": [
         "niri/workspaces",
-        "custom/cava",
-        "mpris",
-        "custom/screenshot",
-        "custom/wfrec",
-	//"custom/wallpapers",
-	"custom/clipboard",
-	"custom/actions",
-        "custom/colorpicker",
-        "niri/window",
+        "cffi/niri-taskbar"
     ],
     "modules-center": [
+        "custom/screenshot",
+	    "custom/clipboard",
+        "custom/colorpicker",
+        "power-profiles-daemon",
         "custom/applauncher",
-        //"custom/separator#2",
-        "cffi/niri-taskbar",
+        "clock",
+        "custom/cava",
+        "custom/updates"
     ],
     "modules-right": [
-        "custom/updates",
         "tray",
-        "group/ddcutil",
-        "group/audio",
-        "bluetooth",
         "network",
-        "idle_inhibitor",
+        "group/ddcutil",
+        "privacy",
+        "group/audio",
         "battery",
-        "power-profiles-daemon",
-        "clock",
         "group/powermenu"
-    ],
+    ]
 }

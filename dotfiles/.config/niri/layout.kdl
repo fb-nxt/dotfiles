@@ -5,7 +5,7 @@ layout {
     //background-color "transparent"
     // Set gaps around windows in logical pixels.
     // 窗口和窗口之间的间距
-    gaps 12
+    gaps 6
     //empty-workspace-above-first
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -153,9 +153,9 @@ layout {
     
     //窗口距离屏幕边缘的距离
     struts {
-        left -3
-        right -3
-        top -7
-        bottom -8
+        left -1
+        right -1
+        top -1
+        bottom -1
     }
 }

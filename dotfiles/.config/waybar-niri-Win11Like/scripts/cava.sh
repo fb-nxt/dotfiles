@@ -2,7 +2,7 @@
 
 # 配置
 CHARS="▁▂▃▄▅▆▇█"
-BARS=14
+BARS=10
 CONF="/tmp/waybar_cava_config"
 
 # 初始化

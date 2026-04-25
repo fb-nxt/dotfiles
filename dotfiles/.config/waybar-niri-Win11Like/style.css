@@ -1,170 +1,75 @@
 @import "colors.css";
 
-
-/* 用ai把所有的字体大小都设置为自动变化的了
-    核心修改逻辑：
-   这里定义基准大小
-   下方所有使用 em 单位的字体都会基于这个数值缩放。
-   如果未来 Bar 高度变了，只需要修改这里即可。
+/* 核心逻辑：全相对单位 (em) 改造
+   基准字体大小：18px
+   如果需要整体放大缩小，只需修改下方的 18px 即可
 */
 * {
     border: none;
-    border-radius: 5px;
-    font-family: "JetBrainsMono NFP","LXGW WenKai Screen", "JetBrains Maple Mono";
-    font-size: 16px; /* 1em（基准） */
-    min-height: 0;
+    border-radius: 0.3em;
+    font-family: "JetBrainsMono Nerd Font Propo","LXGW WenKai Screen","JetBrains Maple Mono";
+    /* font-family:"0xProto Nerd Font Propo"; */
+    font-size: 16.6px; /* 基准大小 */
+    opacity: 1;
 }
 
 window#waybar {
-    border-radius: 0px;
-    background: @surface;
+    background: @surface_container_high;
     color: @on_surface;
 }
 
+/* 鼠标悬浮信息提示 */
 tooltip {
-    background: @surface_container_high;
-    border: 2px solid @outline;
+    background: @secondary_container;
+    border: 0.17em solid @outline; /* 3px */
     opacity: 1;
 }
 
 tooltip label {
     color: @on_surface;
-    font-size: 0.89em; /* 原 16px */
+    font-size: 0.89em; /* 16px */
 }
 
+/* 工作区 */
 #workspaces {
-    background-color: @surface_container_high;
-    padding: 0px 5px;
-    margin: 5px;
+    background: @surface;
+    border-radius: 0.3em;
+    padding: 0;
+    margin: 0;
 }
 
 #workspaces button {
-    padding: 0px 10px;
+    padding: 0px 0.56em; /* 10px */
+    background: transparent;
     color: @tertiary_container;
+    border-radius: 0;
+    margin: -2px;
+    border: none;
+    box-shadow: none;
+    outline: none;
 }
 
-/* #workspaces label {
-    font-size: 1.11em; 原 20px 
-} */
-
 #workspaces button:hover {
-    background: @surface_bright;
+    background: @on_tertiary;
 }
 
 #workspaces button.active {
     color: @tertiary;
 }
 
-#mpris,
-#custom-cava {
-    background-color: @surface_container_high;
-    color: @primary;
-}
-
-#custom-cava {
-    padding: 0px 10px 0px 10px;
-    margin: 5px 0px 5px 5px;
-
-}
-#mpris {
-    padding: 0px 5px;
-    margin: 5px 0px 5px 5px;
-
-}
-
-#custom-screenshot,
-#custom-wfrec,
-#custom-actions,
-#custom-clipboard,
-#custom-wallpapers,
-#custom-colorpicker {
-    background-color: @surface_container_high;
-    color: @tertiary;
-}
-
-#custom-wfrec.recording {
-    color: @error;
-}
-
-#custom-screenshot,
-#custom-wfrec,
-#custom-actions,
-#custom-clipboard,
-#custom-wallpapers,
-#custom-colorpicker {
-    padding: 0px 5px;
-    margin: 5px 0px 5px 0px;
-    font-size: 1.11em; /* 原 20px */
-}
-
-#custom-screenshot {
-    padding: 0px 5px 0px 10px;
-    margin: 5px 0px 5px 10px;
-    border-radius: 5px 0px 0px 5px;
-}
-
-#custom-actions,
-#custom-clipboard,
-#custom-wallpapers,
-#custom-wfrec {
-    border-radius: 0px;
-}
-
-
-#custom-actions {
-    font-size: 1.3em;
-}
-
-
-#custom-colorpicker {
-    padding: 0px 10px 0px 5px;
-    margin: 5px 5px 5px 0px;
-    border-radius: 0px 5px 5px 0px;
-}
-
-#window {
-    padding: 0px 10px;
-    background-color: @surface_container_high;
-    color: @on_surface;
-    margin: 5px
-}
-
-#window label {
-    font-size: 0.89em; /* 原 16px */
-}
-
-window#waybar.empty #window {
-    background-color: @surface;
-}
-
-#custom-applauncher {
-    font-size: 1.39em; /* 原 25px */
-    padding: 0px 0.45em;
-    margin: 5px;
-    background-color: @primary;
-    color: @on_primary;
-}
-
-#custom-separator.2 {
-    font-size: 1.56em; /* 原 28px */
-    padding: 0px 5px;
-    /* background-color:@primary; */
-    color: @on_surface;
-}
-
 /* waybar niri taskbar */
 .niri-taskbar {
-    background: none;
-    padding: 0px;
-    margin: 4px 4px 4px 0px;
+    background: @surface_container_high;
+    margin-left:0.5em; 
+    padding: 0 0 0 0em; /* 5px */
 }
 
 .niri-taskbar button:hover {
-    background: @secondary_container;
+    background: @surface_container;
 }
 
 .niri-taskbar button.focused {
-    background: @secondary_container;
+    background: @surface;
 }
 
 .niri-taskbar button.urgent {
@@ -175,7 +80,6 @@ window#waybar.empty #window {
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
-
 @keyframes blink {
     to {
         background-color: @primary;
@@ -183,66 +87,199 @@ window#waybar.empty #window {
     }
 }
 
-#custom-updates {
-    padding: 0px 10px;
-    margin: 5px;
+/* 窗口名 */
+#window {
+    padding: 0px 0.56em; /* 10px */
     background-color: @surface_container_high;
-    color: @error;
+    color: @on_surface;
 }
 
-#tray {
-    padding: 0px 10px;
-    background-color: @surface_container_high;
-    margin: 5px;
+#window label {
+    font-size: 0.89em; /* 16px */
 }
 
-#custom-ddcutil-day,
-#custom-ddcutil-night,
-#custom-ddcutil-sleep,
-#custom-separator.1,
-#backlight {
+window#waybar.empty #window {
     background-color: @surface_container_high;
+}
+
+/* 中间 */
+
+#custom-actions {
+    padding: 0px 0.3em 0px 0.5em; /* 7px */
+    font-size: 1.35em; /* 20px */
+}
+
+ #custom-screenshot {
+    padding: 0px 0.5em 0em 0.3em; /* 7px */
+    font-size: 1.15em; /* 22px */
+    border-radius: 0.3em 0 0 0.3em;
+}
+
+/* wf-recoder脚本 */
+#custom-wfrec {
+  padding: 0 0.25em; /* 7px */
+  font-size: 1.1em;
+}
+
+#custom-wallpapers{
+    padding: 0 0.5em 0 0.3em; /* 7px */
+    font-size: 1.15em; /* 22px */
+}
+#custom-clipboard{
+    padding: 0 0.5em 0 0.3em; /* 7px */
+    font-size: 1.15em; /* 22px */
+    border-radius: 0em 0em 0em 0em;
+}
+
+#custom-colorpicker{
+    padding: 0 0.5em 0 0.3em;
+    font-size: 1.15em;
+    border-radius: 0em 0em 0em 0em;
+}
+
+
+#custom-wfrec.recording,
+#custom-wfrec,
+#custom-actions,
+#custom-wallpapers,
+#custom-clipboard,
+#custom-settings,
+#custom-screenshot {
+    background-color: @surface;
+    color: @secondary;
+}
+/* 录制中 */
+#custom-wfrec.recording {
+  color: @error;            
+}
+/* #custom-wfrec,
+#custom-screenshot{
+    color: @secondary;
+} */
+
+#power-profiles-daemon{
+    padding: 0 0.5em 0 0.3em;
+    font-size: 1.15em;
+    border-radius: 0em 0.3em 0.3em 0em;
+    margin-right: 4em;
+}
+
+#power-profiles-daemon,
+#custom-colorpicker,
+#idle_inhibitor {
+    background-color: @surface;
+    color: @secondary;
+    padding: 0px 0.36em; /* 6px */
+}
+#idle_inhibitor.activated{
+    padding: 0px 0.4em 0px 0.4em;
+}
+#power-profiles-daemon{
+    padding: 0px 0.4em 0em 0.36em;
+}
+#power-profiles-daemon.performance {
+    color: @secondary;
+    font-size: 1.28em; /* 23px */
+    padding: 0px 0.32em 0px 0.45em; /* 9px 8px */
+}
+
+#power-profiles-daemon.balanced {
     color: @secondary;
 }
 
+#power-profiles-daemon.power-saver {
+    color: #1aa052;
+
+}
+
+/* 菜单 */
+#custom-applauncher {
+    font-size: 1.2em; /* 25px */
+    padding: 0px 0.39em; /* 7px */
+    margin: 0px;
+    border-radius: 0.3em 0em 0em 0.3em;
+    background-color: @surface;
+    color: @secondary;
+}
+
+/*中间右边第二级*/
+
+#clock {
+    padding: 0px 0.45em 0em 0.45em; /* 8px */
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    background-color: @surface;
+    font-size: 1.1em;
+}
+
+#clock {
+    color: @secondary;
+}
+
+#custom-cava {
+    background-color: @surface;
+    color: @primary;
+    margin-left: 3em;
+    border-radius: 0.3em;
+    padding: 0px 0.35em; /* 7px */
+}
+
+#mpris {
+    background-color: @surface_container_high;
+    color: @primary;
+    padding: 0px 0.39em 0px 0px; /* 7px 0 0 */
+}
+
+/* 右侧 */
+
+#custom-updates {
+    border-radius: 0.3em;
+    padding: 0px 0.17em 0px 0.39em; /* 3px 7px */
+    background-color: @surface_bright;
+    color: @error;
+    margin-left: 3em;
+}
+
+#tray {
+    padding: 0px 0.39em 0px 0.39em; /* 7px */
+    font-size: 1.11em; /* 20px */
+    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    background-color: @surface_bright;
+}
+
+/* 亮度 */
+#custom-ddcutil-day {
+    padding: 0px 0.39em 0px 0.39em;
+    border-radius: 0em;
+}
+#custom-ddcutil-night{
+    padding: 0px 0.39em 0px 0.39em;
+    border-radius: 0em;
+}
+#custom-ddcutil-sleep{
+    padding: 0px 0.39em 0px 0.39em;
+    border-radius: 0em;
+}
 #custom-ddcutil-day,
 #custom-ddcutil-night,
 #custom-ddcutil-sleep,
 #custom-separator.1 {
-    font-size: 1.11em; /* 原 20px */
-    padding: 0px 5px;
+    background-color: @surface_container_high;
+    color: @tertiary;
+    padding: 0px 0.33em; /* 5px */
+    border-radius: 0em;
 }
-
-#custom-ddcutil-day {
-    padding: 0px 10px;
-    margin: 5px 5px 5px 5px;
-    border-radius: 5px 5px 5px 5px;
-}
-
-#custom-ddcutil-night {
-    border-radius: 0px 5px 5px 0px;
-    margin: 8px 2px 8px 0px;
-}
-
-#custom-ddcutil-sleep,
-#custom-separator.1 {
-    border-radius: 0px;
-    margin: 8px 0px;
-}
-
 
 #backlight {
-    font-size: 1.22em; /* 原 22px */
-    padding: 0px 5px 0px 0px;
-    margin: 8px 0px;
-    border-radius: 0px;
+    background-color: @surface_container_high;
+    color: @tertiary;
+    padding: 0px 0.3em 0px 0px; /* 5px */
+    border-radius: 0em;
 }
 
 #backlight-slider {
     background-color: @surface_container_high;
-    padding: 0px 7px 0px 10px;
-    margin: 8px 0px 8px 10px;
-    border-radius: 5px 0px 0px 5px
+    padding: 0px 0.3em 0px 0px; /* 5px */
+    border-radius: 0em;
 }
 
 #backlight-slider slider {
@@ -251,39 +288,51 @@ window#waybar.empty #window {
     opacity: 0;
     background-image: none;
     border: none;
+    border-radius: 0.3em 0em 0em 0.3em;
     box-shadow: none;
     background: none;
 }
 
 #backlight-slider trough {
-    min-height: 10px;
-    min-width: 80px;
-    border-radius: 5px;
+    min-height: 0.56em; /* 10px */
+    min-width: 4.44em;  /* 80px */
+    border-radius: 0.3em 0em 0em 0.3em; /* 5px */
     opacity: 0;
-    background-color: @surface;
+    border-radius: 0em;
+    background-color: @background;
 }
 
 #backlight-slider highlight {
-    min-width: 10px;
-    border-radius: 5px;
-    background-color: @secondary;
+    min-width: 0.56em; /* 10px */
+    border-radius: 0em; /* 5px */
+    background-color: @tertiary;
+}
+
+/* 音视频 */
+#privacy {
+    padding: 0px 0.39em; /* 7px */
+}
+
+#privacy {
+    background-color: @surface_container_high;
+    color: @error;
 }
 
 #pulseaudio {
-    /* font-size: 1.11em; 原 20px */
-    padding: 0px 10px;
-    margin: 5px;
+    padding: 0px 0px 0px 0.3em; /* 5px */
+    border-radius: 0em 0.3em 0.3em 0em;
 }
 
 #pulseaudio-slider {
-    padding: 0px 5px;
-    margin: 8px 2px 8px 5px;
+    padding: 0px 0px 0px 0em; /* 10px */
+    margin: 0px;
+    border-radius: 0em;
 }
 
 #pulseaudio-slider,
 #pulseaudio {
     background-color: @surface_container_high;
-    color: @secondary;
+    color: @tertiary;
 }
 
 #pulseaudio-slider slider {
@@ -296,132 +345,104 @@ window#waybar.empty #window {
 }
 
 #pulseaudio-slider trough {
-    min-height: 10px;
-    min-width: 80px;
-    border-radius: 5px;
+    min-height: 0.56em; /* 10px */
+    min-width: 4.44em; /* 80px */
+    border-radius: 0em; /* 5px */
     background-color: @surface;
 }
 
 #pulseaudio-slider highlight {
     min-width: 0px;
-    border-radius: 5px;
-    background-color: @secondary;
+    border-radius: 0em; /* 5px */
+    background-color: @tertiary;
 }
 
+/* 电池 */
+#bluetooth,
+#bluetooth.disabled,
 #network,
-#bluetooth {
-    background-color: @surface_container_high;
-    color: @secondary;
-    font-size: 1.22em; /* 原 22px */
-}
-
-#bluetooth {
-    padding: 0px 5px 0px 10px;
-    margin: 5px 0px 5px 5px;
-    border-radius: 5px 0px 0px 5px;
-}
-#bluetooth.disabled{
-    padding: 0px 3px 0px 9px;
-}
-#network {
-    padding: 0px 10px 0px 5px;
-    margin: 5px 5px 5px 0px;
-    border-radius: 0px 5px 5px 0px;
-}
-
-
-#idle_inhibitor,
-#battery,
-#power-profiles-daemon {
-    background-color: @surface_container_high;
-    color: @secondary;
-}
-#battery{
-    font-size:1.12em;
-}
 #battery {
-    padding: 0px 6px 0px 5px;
-    margin: 5px 0px 5px 0px;
-    border-radius: 0px 0px 0px 0px;
+    margin-left: 0em;
+    background-color: @surface_container;
+    color: @secondary;
+    padding: 0px 0.39em; /* 7px */
+    border-radius: 0.3em 0em 0em 0.3em;  
 }
-#idle_inhibitor {
-    padding: 0px 5px 0px 10px;
-    margin: 5px 0px 5px 5px;
-    border-radius: 5px 0px 0px 5px;
-    color: @tertiary;
-    font-size:1.03em;
-}
-#idle_inhibitor.activated{
-    padding: 0px 6px 0px 11px;
-}
-#power-profiles-daemon {
-    padding: 0px 12px 0px 6px;
-    margin: 5px 5px 5px 0px;
-    border-radius: 0px 5px 5px 0px;
-    color: @tertiary;
-}
-
-#power-profiles-daemon.performance {
-    color: @error;
-    font-size: 1.25em; /* 原 23px */
-    padding: 0px 14px 0px 9px;
-}
-
-/* #power-profiles-daemon.balanced {
-    color: @on_tertiary;
-} */
-
-#power-profiles-daemon.power-saver {
-    color: #1aa052;
-}
-
 
 #battery.critical:not(.charging) {
-    background-color: @error;
-    color: @on_error;
+    background-color: @surface_container;
+    color: @error;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    padding: 0px 0.39em; /* 7px */
 }
 
-#clock {
-    background-color: @surface_container_high;
-    color: @secondary;
-    padding: 0px 10px;
-    margin: 5px;
+#bluetooth {
+    padding: 0px 0.3em 0 0.5em; /* 7px */
+    font-size: 1.13em; /* 20px */
+}
+#bluetooth.disabled{
+    padding: 0px 0.2em 0px 0.46em ;
 }
 
+#network {
+    margin-left: 0.5em;
+    padding: 0px 0.35em 0 0.3em; /* 7px */
+    font-size: 1.1em; /* 22px */
+    border-radius: 0.3em 0em 0em 0.3em;
+}
+
+
+/* powermenu电源菜单 */
 #custom-wlogout {
-    padding: 0px 10px 0px 10px;
-    font-size: 1.39em; /* 原 25px */
-    border-radius: 50%;
-    margin: 5px
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.39em; /* 25px */
+    border-radius: 0em 0.3em 0.3em 0em;
+}
+#custom-reboot {
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.1em; /* 25px */
+    border-radius: 0.3em 0em 0em 0.3em;
+}
+#custom-logout{
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.1em; /* 25px */
+    border-radius: 0em 0em 0em 0em;
+}
+#custom-lockscreen{
+    padding: 0px 0.83em 0px 0.56em; /* 15px 10px */
+    font-size: 1.1em; /* 25px */
+    border-radius: 0em 0em 0em 0em;
 }
 
 #custom-wlogout,
 #custom-reboot,
 #custom-lockscreen,
 #custom-logout {
-    color: @tertiary;
-    padding: 0px 10px;
+    background-color: @surface;
+    color: @error;
+    padding: 0px 0.56em; /* 10px */
+}
+#clock.date {
+    padding: 0px 0.39em; /* 7px */
+}
+#custom-datelogo,
+#clock.date {
+    background-color: @secondary_container;
+    color: @on_secondary_container;
+}
+
+#custom-swaync {
     background-color: @surface_container_high;
+    color: @on_surface_container;
+    padding: 0px 0.83em; /* 15px */
 }
 
-#custom-lockscreen {
-    margin: 8px 2px 8px 0px;
-    border-radius: 0px 5px 5px 0px;
-    padding: 0px 10px 0px 5px;
-}
-
-#custom-reboot {
-    margin: 8px 0px 8px 10px;
-    border-radius: 5px 0px 0px 5px;
-    padding: 0px 5px 0px 10px;
-}
-
-#custom-logout {
-    margin: 8px 0px 8px 0px;
-    border-radius: 0px;
+#custom-mako {
+    background-color: @surface_container_high;
+    color: @on_surface_container;
+    padding: 0px 0.83em; /* 15px */
 }
