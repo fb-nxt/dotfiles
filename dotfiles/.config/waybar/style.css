@@ -14,7 +14,7 @@
 }
 
 window#waybar {
-    background: @surface_container_high;
+    background: @background;
     color: @on_surface;
 }
 
@@ -117,8 +117,8 @@ window#waybar.empty #window {
 
 /* wf-recoder脚本 */
 #custom-wfrec {
-  padding: 0 0.25em; /* 7px */
-  font-size: 1.1em;
+    padding: 0px 0.5em 0em 0.3em; /* 7px */
+    font-size: 1.1em;
 }
 
 #custom-wallpapers{
@@ -161,7 +161,7 @@ window#waybar.empty #window {
     padding: 0 0.5em 0 0.3em;
     font-size: 1.15em;
     border-radius: 0em 0.3em 0.3em 0em;
-    margin-right: 5em;
+    margin-right: 0em;
 }
 
 #power-profiles-daemon,
@@ -172,7 +172,7 @@ window#waybar.empty #window {
     padding: 0px 0.36em; /* 6px */
 }
 #idle_inhibitor.activated{
-    padding: 0px 0.4em 0px 0.4em;
+    padding: 0px 0.32em 0px 0.32em;
 }
 #power-profiles-daemon{
     padding: 0px 0.4em 0em 0.36em;
@@ -180,7 +180,7 @@ window#waybar.empty #window {
 #power-profiles-daemon.performance {
     color: @secondary;
     font-size: 1.28em; /* 23px */
-    padding: 0px 0.32em 0px 0.45em; /* 9px 8px */
+    padding: 0px 0.32em 0px 0.32em; /* 9px 8px */
 }
 
 #power-profiles-daemon.balanced {
@@ -206,7 +206,7 @@ window#waybar.empty #window {
 
 #clock {
     padding: 0px 0.45em 0em 0.45em; /* 8px */
-    border-radius: 0.3em 0.3em 0.3em 0.3em;
+    border-radius: 0em 0.3em 0.3em 0em;
     background-color: @surface;
     font-size: 1.1em;
 }
@@ -218,7 +218,7 @@ window#waybar.empty #window {
 #custom-cava {
     background-color: @surface;
     color: @primary;
-    margin-left: 5em;
+    margin-left: 0em;
     border-radius: 0.3em;
     padding: 0px 0.35em; /* 7px */
 }

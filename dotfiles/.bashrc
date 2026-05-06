@@ -13,12 +13,6 @@ set PS1='[\u@\h \W]\$ '
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Use for Blog
-export DB_HOST="127.0.0.1"
-export DB_PORT="3306"
-export DB_USER="root"
-export DB_PASSWORD="asdasd"
-# consider using a dedicated script or direnv instead.
-
-# OpenHarness
-export PATH="/home/shorin/.openharness-venv/bin:$PATH"
+# Load Goland
+export PATH=$PATH:/opt/GoLand-2026.1.1/bin
+alias goland='/opt/GoLand-2026.1.1/bin/goland.sh'

@@ -4,7 +4,7 @@
     ],
     "height": 5,
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "fixed-center": true,
     "reload_style_on_change": true,
     "modules-left": [
@@ -12,13 +12,13 @@
         "cffi/niri-taskbar"
     ],
     "modules-center": [
+        "custom/cava",
         "custom/screenshot",
-	    "custom/clipboard",
-        "custom/colorpicker",
+        "custom/wfrec",
         "power-profiles-daemon",
-        "custom/applauncher",
-        "clock",
-        "custom/cava"
+        "custom/clipboard",
+        "custom/colorpicker",
+        "clock"
     ],
     "modules-right": [
         "tray",

@@ -24,7 +24,7 @@
   //时钟
   "clock": {
     "interval": 60,
-    "format": "󰥔 {:%H:%M}",
+    "format": "{:%H:%M}",
     "tooltip-format": "{:%Y/%m/%d %A}\n---\n左键：打开时钟\n右键：打开日历",
     "max-length": 25,
     "on-click": "gnome-clocks",
@@ -198,7 +198,7 @@
   //logo+程序启动器
   "custom/applauncher": {
     "tooltip-format": "左键：软件启动菜单\n右键：打开终端\n中键：启用/禁用niri背景自动模糊",
-    "format": "",
+    "format": "",
     "on-click": "fuzzel",
     "on-click-right":"kitty || ghostty || alacritty || foot || konsole",
     "on-click-middle": "~/.config/scripts/niri_auto_blur_bg.sh || pkill -f niri_auto_blur_bg.sh"
@@ -210,10 +210,10 @@
       "transition-left-to-right": false,
     },
     "modules": [
-      "custom/wlogout",
-      "custom/reboot",
-      "custom/logout",
-      "custom/lockscreen",
+      "custom/wlogout"
+      //"custom/reboot",
+      //"custom/logout",
+      //"custom/lockscreen",
     ],
   },
   "custom/wlogout": {
@@ -274,11 +274,11 @@
     },
     "modules": [
       "custom/ddcutil-day",
-      "backlight/slider",
-      "backlight",
-      "custom/separator#1",
-      "custom/ddcutil-sleep",
-      "custom/ddcutil-night",
+      "backlight/slider"
+      //"backlight",
+      //"custom/separator#1",
+      //"custom/ddcutil-sleep",
+      //"custom/ddcutil-night",
     ],
   },
   "custom/ddcutil-day": {

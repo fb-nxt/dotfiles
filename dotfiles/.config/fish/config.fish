@@ -56,3 +56,16 @@ set -p PATH /opt/miniconda3/bin
 if not contains -- "/home/shorin/.openharness-venv/bin" $PATH
     set -gx PATH "/home/shorin/.openharness-venv/bin" $PATH
 end
+
+# OpenHarness
+if not contains -- "/home/shorin/.local/bin" $PATH
+    set -gx PATH "/home/shorin/.local/bin" $PATH
+end
+
+# kubectl
+kubectl completion fish | source
+set -gx PATH $PATH $HOME/.krew/bin
+
+# GoLand
+alias goland="/opt/GoLand-2026.1.1/bin/goland.sh"
+
